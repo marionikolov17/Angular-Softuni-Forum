@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { MainComponent } from './main/main.component';
 import { ThemesListComponent } from './main/themes-list/themes-list.component';
+import { PostsListComponent } from './main/posts-list/posts-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ThemesListComponent
+    ThemesListComponent,
+    PostsListComponent
   ],
   imports: [
     BrowserModule,
