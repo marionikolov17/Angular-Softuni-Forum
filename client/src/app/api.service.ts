@@ -14,7 +14,7 @@ export class ApiService {
     return this.http.get<Theme[]>(this.api + "/themes");
   }
 
-  public getPosts(limit: number | undefined) {
+  public getPosts(limit?: number) {
     let url: string = this.api + "/posts";
 
     if (limit)
