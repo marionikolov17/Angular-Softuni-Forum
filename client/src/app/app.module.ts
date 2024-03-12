@@ -9,6 +9,7 @@ import { ApiService } from './api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ThemesModule } from './theme/theme.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ThemesModule } from './theme/theme.module';
     SharedModule,
     HttpClientModule,
     AppRoutingModule,
-    ThemesModule
+    ThemesModule,
+    UserModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
