@@ -14,7 +14,8 @@ import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
     CommonModule
   ],
   exports: [
-    LoaderComponent
+    LoaderComponent,
+    WelcomeMsgComponent
   ]
 })
 export class SharedModule { }
