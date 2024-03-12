@@ -8,13 +8,11 @@ import { SharedModule } from './shared/shared.module';
 import { ApiService } from './api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MainComponent
   ],
   imports: [
     BrowserModule,
