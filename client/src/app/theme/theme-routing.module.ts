@@ -5,7 +5,7 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   {
     path: 'themes',
-    children: [{ path: '', pathMatch: 'full', component: MainComponent }],
+    component: MainComponent,
   },
 ];
 
@@ -13,4 +13,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+
+export class ThemeRoutingModule {}

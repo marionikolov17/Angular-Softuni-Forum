@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { ApiService } from './api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { ThemesModule } from './theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     CoreModule,
     SharedModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ThemesModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
