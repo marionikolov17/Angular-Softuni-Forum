@@ -5,12 +5,14 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import { MainComponent } from './main/main.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { NewThemeComponent } from './new-theme/new-theme.component';
 
 @NgModule({
   declarations: [
     ThemesListComponent,
     PostsListComponent,
-    MainComponent
+    MainComponent,
+    NewThemeComponent
   ],
   imports: [
     CommonModule,
