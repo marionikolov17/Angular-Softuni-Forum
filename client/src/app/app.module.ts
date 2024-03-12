@@ -10,13 +10,15 @@ import { PostsListComponent } from './main/posts-list/posts-list.component';
 import { SharedModule } from './shared/shared.module';
 import { ApiService } from './api.service';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     ThemesListComponent,
-    PostsListComponent
+    PostsListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
