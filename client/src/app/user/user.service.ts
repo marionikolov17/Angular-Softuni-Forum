@@ -5,11 +5,21 @@ import { Injectable } from '@angular/core';
 })
 
 export class UserService {
-
-  public isLoggedIn: boolean = false;
+  private USER_KEY = "user";
   public user: any;
 
-  constructor() { }
+  get isLoggedIn(): boolean {
+    return !!this.user;
+  }
+
+  constructor() {
+    try {
+      const currentUser = localStorage.getItem(this.USER_KEY) || '';
+      this.user = JSON.parse(currentUser);
+    } catch {
+      this.user = undefined;
+    }
+  }
 
   private generateUser(): any {
     return {
@@ -19,13 +29,13 @@ export class UserService {
   }
 
   public login(): void {
-    this.isLoggedIn = true;
     this.user = this.generateUser();
+    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
   }
 
   public logout(): void {
-    this.isLoggedIn = false;
-    this.user = {};
+    this.user = undefined;
+    localStorage.removeItem(this.USER_KEY);
   }
 
 }

@@ -7,7 +7,7 @@
       <ul>
         <div style="display: flex;" *ngIf="userService.isLoggedIn">
           <li>
-            <a routerLink="/profile">John's profile</a>
+            <a routerLink="/profile">{{userService.user.username}}'s profile</a>
           </li>
           <li>
             <a routerLink="/logout">Logout</a>
