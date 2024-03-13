@@ -5,15 +5,15 @@
     </div>
     <div class="mini-navbar">
       <ul>
-        <div style="display: flex;" *ngIf="userService.isLoggedIn">
+        <div style="display: flex;" *ngIf="isLoggedIn">
           <li>
-            <a routerLink="/profile">{{userService.user.username}}'s profile</a>
+            <a routerLink="/profile">{{username}}'s profile</a>
           </li>
           <li>
             <a (click)="logout()">Logout</a>
           </li>
         </div>
-        <div style="display: flex;" *ngIf="!userService.isLoggedIn">
+        <div style="display: flex;" *ngIf="!isLoggedIn">
           <li>
             <a routerLink="/login">Login</a>
           </li>

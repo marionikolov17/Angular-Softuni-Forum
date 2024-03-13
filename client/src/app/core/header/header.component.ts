@@ -9,7 +9,15 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class HeaderComponent {
 
-  constructor(public userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {}
+
+  get isLoggedIn(): boolean {
+    return this.userService.isLoggedIn;
+  }
+
+  get username(): string {
+    return this.userService.user.username || "";
+  }
 
   logout() {
     this.userService.logout();
