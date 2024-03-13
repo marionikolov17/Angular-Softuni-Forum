@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 interface UserAuth {
   id: string;
-  username: string
+  username: string,
+  email: string,
+  phone: string
 }
 
 @Injectable({
@@ -28,7 +30,9 @@ export class UserService {
   public login(): void {
     this.user = {
       id: "5fa64b972183ce1728ff3720",
-      username: "Ivan"
+      username: "Ivan",
+      email: "mario@abv.bg",
+      phone: "088489372"
     };
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
   }
