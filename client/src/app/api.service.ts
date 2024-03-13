@@ -23,4 +23,8 @@ export class ApiService {
 
     return this.http.get<Post[]>(url);
   }
+
+  public getTheme(themeId: string) {
+    return this.http.get<Theme>(this.api + `/themes/${themeId}`);
+  }
 }
