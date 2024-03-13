@@ -4,7 +4,7 @@
     <app-loader />
   </div>
 
-  <app-welcome-msg />
+  <app-welcome-msg *ngIf="!isLoggedIn"/>
   <div class="theme-title" *ngIf="!isLoading">
     <!-- theme component  -->
     <div class="theme-container" *ngFor="let theme of themes">
