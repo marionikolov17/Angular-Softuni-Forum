@@ -24,9 +24,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CoreModule,
     SharedModule,
     HttpClientModule,
-    AppRoutingModule,
     ThemesModule,
-    UserModule
+    UserModule,
+    AppRoutingModule,
   ],
   providers: [ApiService, UserService],
   bootstrap: [AppComponent]
