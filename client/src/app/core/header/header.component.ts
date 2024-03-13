@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
 
 @Component({
@@ -8,5 +9,10 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class HeaderComponent {
 
-  constructor(public userService: UserService) {}
+  constructor(public userService: UserService, private router: Router) {}
+
+  logout() {
+    this.userService.logout();
+    this.router.navigate(["/home"]);
+  }
 }

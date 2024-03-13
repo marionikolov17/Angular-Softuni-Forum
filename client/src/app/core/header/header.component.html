@@ -10,7 +10,7 @@
             <a routerLink="/profile">{{userService.user.username}}'s profile</a>
           </li>
           <li>
-            <a routerLink="/logout">Logout</a>
+            <a (click)="logout()">Logout</a>
           </li>
         </div>
         <div style="display: flex;" *ngIf="!userService.isLoggedIn">
