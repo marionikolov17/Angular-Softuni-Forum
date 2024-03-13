@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+interface UserAuth {
+  id: string;
+  username: string
+}
 
+@Injectable({
+  providedIn: 'root',
+})
 export class UserService {
-  private USER_KEY = "user";
-  public user: any;
+  private USER_KEY = 'user';
+  public user: UserAuth | undefined;
 
   get isLoggedIn(): boolean {
     return !!this.user;
@@ -21,15 +25,11 @@ export class UserService {
     }
   }
 
-  private generateUser(): any {
-    return {
-      id: "5fa64c1f2183ce1728ff3723",
-      username: "John"
-    }
-  }
-
   public login(): void {
-    this.user = this.generateUser();
+    this.user = {
+      id: "5fa64b972183ce1728ff3720",
+      username: "Ivan"
+    };
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
   }
 
@@ -37,5 +37,4 @@ export class UserService {
     this.user = undefined;
     localStorage.removeItem(this.USER_KEY);
   }
-
 }
