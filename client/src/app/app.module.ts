@@ -11,11 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { ThemesModule } from './theme/theme.module';
 import { UserModule } from './user/user.module';
 import { UserService } from './user/user.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
