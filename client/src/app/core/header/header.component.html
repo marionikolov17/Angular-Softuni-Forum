@@ -5,7 +5,7 @@
     </div>
     <div class="mini-navbar">
       <ul>
-        <div style="display: none;">
+        <div style="display: flex;" *ngIf="userService.isLoggedIn">
           <li>
             <a routerLink="/profile">John's profile</a>
           </li>
@@ -13,7 +13,7 @@
             <a routerLink="/logout">Logout</a>
           </li>
         </div>
-        <div style="display: flex;">
+        <div style="display: flex;" *ngIf="!userService.isLoggedIn">
           <li>
             <a routerLink="/login">Login</a>
           </li>
