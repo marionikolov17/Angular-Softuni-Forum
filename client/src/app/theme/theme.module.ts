@@ -6,13 +6,15 @@ import { MainComponent } from './main/main.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { NewThemeComponent } from './new-theme/new-theme.component';
+import { CurrentThemeComponent } from './current-theme/current-theme.component';
 
 @NgModule({
   declarations: [
     ThemesListComponent,
     PostsListComponent,
     MainComponent,
-    NewThemeComponent
+    NewThemeComponent,
+    CurrentThemeComponent
   ],
   imports: [
     CommonModule,
