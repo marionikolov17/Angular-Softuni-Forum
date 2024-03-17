@@ -9,7 +9,7 @@
           ><span><i class="fas fa-envelope"></i></span
         ></label>
         <input
-          class="input-error"
+          [class]="loginForm.get('email')?.errors && loginForm.get('email')?.touched ? 'input-error' : ''"
           type="email"
           name="email"
           id="email"
@@ -34,6 +34,7 @@
           ><span><i class="fas fa-lock"></i></span
         ></label>
         <input
+          [class]="loginForm.get('password')?.errors && loginForm.get('password')?.touched ? 'input-error' : ''"
           type="password"
           name="password"
           id="password"
@@ -42,8 +43,18 @@
         />
       </p>
       <ng-container *ngIf="loginForm.get('password')?.touched">
-        <p class="error" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required!</p>
-        <p class="error" *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 5 characters!</p>
+        <p
+          class="error"
+          *ngIf="loginForm.get('password')?.errors?.['required']"
+        >
+          Password is required!
+        </p>
+        <p
+          class="error"
+          *ngIf="loginForm.get('password')?.errors?.['minlength']"
+        >
+          Password must be at least 5 characters!
+        </p>
       </ng-container>
 
       <button [disabled]="loginForm.invalid">Login</button>
