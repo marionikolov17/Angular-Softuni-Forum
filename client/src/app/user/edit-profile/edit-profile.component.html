@@ -3,10 +3,18 @@
   <div class="profile">
     <img src="./assets/profile.png" alt="default user" />
     <h3>User Info:</h3>
-    <form action="">
+    <form #form="ngForm" (ngSubmit)="edit()">
       <div class="flex">
         <p>Username:</p>
-        <input type="text" name="username" id="username" value={{userService.user?.username}} />
+        <input
+          type="text"
+          name="username"
+          id="username"
+          [ngModel]="userService.user?.username"
+          #inputUsername="ngModel"
+          required
+          minlength="5"
+        />
       </div>
       <div class="flex">
         <p>Email:</p>
@@ -14,7 +22,9 @@
           type="email"
           name="email"
           id="email"
-          value={{userService.user?.email}}
+          [ngModel]="userService.user?.email"
+          #inputEmail="ngModel"
+          required
         />
       </div>
       <div class="flex">
@@ -23,10 +33,17 @@
           <select name="select-tel" id="select-tel" class="tel">
             <option value="00359">+359</option>
           </select>
-          <input type="text" name="tel" id="tel" value={{userService.user?.phone}} />
+          <input
+            type="text"
+            name="tel"
+            id="tel"
+            value="{{ userService.user?.phone }}"
+            [ngModel]="userService.user?.phone"
+            #inputTel="ngModel"
+          />
         </div>
       </div>
-      <button class="red-button">Cancel</button>
+      <button class="red-button" routerLink="/profile">Cancel</button>
       <button class="green-button">Save</button>
     </form>
   </div>

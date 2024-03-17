@@ -6,7 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { UserService } from './user.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
@@ -22,7 +22,8 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     CommonModule,
     UserRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
 })
 export class UserModule { }
