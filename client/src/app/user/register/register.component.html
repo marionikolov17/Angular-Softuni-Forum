@@ -143,7 +143,12 @@
           />
         </p>
         <ng-container *ngIf="passwords?.get('rePassword')?.touched">
-          <p class="error" *ngIf="passwords?.errors?.['matchPasswordsValidator']">Repeat Password does not match password!</p>
+          <p
+            class="error"
+            *ngIf="passwords?.errors?.['matchPasswordsValidator']"
+          >
+            Repeat Password does not match password!
+          </p>
         </ng-container>
       </ng-container>
       <button [disabled]="registerForm.invalid">Create Account</button>
