@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { emailValidator } from 'src/app/shared/validators/email-validator';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,8 @@ import { FormBuilder } from '@angular/forms';
 })
 export class LoginComponent {
   loginForm = this.fb.group({
-    email: [''],
-    password: ['']
+    email: ['', [Validators.required, emailValidator()]],
+    password: ['', [Validators.required, Validators.minLength(5)]]
   });
 
   constructor(private userService: UserService, private router: Router, private fb: FormBuilder) {}
@@ -20,5 +21,11 @@ export class LoginComponent {
     //e.preventDefault();
     /* this.userService.login();
     this.router.navigate(["/home"]); */
+    if (this.loginForm.invalid) {
+      console.log("Form is invalid");
+    } else {
+      console.log("Form is valid")
+    }
   }
 }
+

@@ -14,12 +14,20 @@
           name="email"
           id="email"
           placeholder="john.doe@gmail.com"
+          formControlName="email"
         />
       </p>
-      <p class="error">Email is required!</p>
-      <!-- <p class="error">
-              Email is not valid!
-          </p> -->
+      <ng-container *ngIf="loginForm.get('email')?.touched">
+        <p class="error" *ngIf="loginForm.get('email')?.errors?.['required']">
+          Email is required!
+        </p>
+        <p
+          class="error"
+          *ngIf="loginForm.get('email')?.errors?.['emailValidator']"
+        >
+          Email is not valid!
+        </p>
+      </ng-container>
 
       <p class="field field-icon">
         <label for="password"
@@ -30,16 +38,15 @@
           name="password"
           id="password"
           placeholder="******"
+          formControlName="password"
         />
       </p>
-      <!-- <p class="error">
-              Password is required!
-          </p>
-          <p class="error">
-              Password must be at least 4 characters!
-          </p> -->
+      <ng-container *ngIf="loginForm.get('password')?.touched">
+        <p class="error" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required!</p>
+        <p class="error" *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 5 characters!</p>
+      </ng-container>
 
-      <button >Login</button>
+      <button [disabled]="loginForm.invalid">Login</button>
 
       <p class="text-center">
         Have an account?
