@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { NgForm } from '@angular/forms';
 
@@ -7,16 +7,10 @@ import { NgForm } from '@angular/forms';
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.css']
 })
-export class EditProfileComponent implements AfterViewInit {
-  @ViewChild('form') form: any;
-
-  ngAfterViewInit(): void {
-    console.log(this.form);
-  }
-
+export class EditProfileComponent {
   constructor(public userService: UserService) {}
 
-  edit() {
-
+  edit(form: NgForm) {
+    console.log(form);
   }
 }
