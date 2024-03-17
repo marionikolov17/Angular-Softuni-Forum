@@ -9,8 +9,11 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "profile", component: ProfileComponent, canActivate: [AuthActivate] },
-  { path: "profile/edit", component: EditProfileComponent, canActivate: [AuthActivate] }
+  { path: "profile", children: [
+    { path: "", pathMatch: "full", component: ProfileComponent, canActivate: [AuthActivate] },
+    { path: "edit", component: EditProfileComponent, canActivate: [AuthActivate] }
+  ]},
+
 ];
 
 @NgModule({
