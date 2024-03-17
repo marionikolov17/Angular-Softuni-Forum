@@ -7,6 +7,7 @@ import { ThemeRoutingModule } from './theme-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { NewThemeComponent } from './new-theme/new-theme.component';
 import { CurrentThemeComponent } from './current-theme/current-theme.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CurrentThemeComponent } from './current-theme/current-theme.component';
   imports: [
     CommonModule,
     ThemeRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
 })
 
