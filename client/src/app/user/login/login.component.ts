@@ -18,9 +18,6 @@ export class LoginComponent {
   constructor(private userService: UserService, private router: Router, private fb: FormBuilder) {}
 
   login() {
-    //e.preventDefault();
-    /* this.userService.login();
-    this.router.navigate(["/home"]); */
     if (this.loginForm.invalid) {
       console.log("Form is invalid");
     } else {
