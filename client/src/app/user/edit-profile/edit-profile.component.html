@@ -3,7 +3,7 @@
   <div class="profile">
     <img src="./assets/profile.png" alt="default user" />
     <h3>User Info:</h3>
-    <form #form="ngForm" (ngSubmit)="edit()">
+    <form #form="ngForm" (ngSubmit)="edit(form)">
       <div class="flex">
         <p>Username:</p>
         <input
