@@ -43,8 +43,8 @@
           />
         </div>
       </div>
-      <button class="red-button" routerLink="/profile">Cancel</button>
-      <button class="green-button">Save</button>
+      <button class="red-button" type="button" routerLink="/profile">Cancel</button>
+      <button class="green-button" type="submit" [disabled]="form.invalid">Save</button>
     </form>
   </div>
 </div>

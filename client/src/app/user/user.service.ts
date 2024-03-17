@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-interface UserAuth {
+export interface UserAuth {
   id: string;
   username: string,
   email: string,
@@ -40,5 +40,9 @@ export class UserService {
   public logout(): void {
     this.user = undefined;
     localStorage.removeItem(this.USER_KEY);
+  }
+
+  public updateUser(newUser: UserAuth) {
+    this.user = newUser;
   }
 }
