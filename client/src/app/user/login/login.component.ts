@@ -20,9 +20,11 @@ export class LoginComponent {
   login() {
     if (this.loginForm.invalid) {
       console.log("Form is invalid");
-    } else {
-      console.log("Form is valid")
+      return;
     }
+
+    this.userService.login();
+    this.router.navigate(['/home']);
   }
 }
 
