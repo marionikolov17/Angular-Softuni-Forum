@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private userService: UserService, private router: Router) {}
+  loginForm = this.fb.group({
+    email: [''],
+    password: ['']
+  });
 
-  login(e: Event) {
-    e.preventDefault();
-    this.userService.login();
-    this.router.navigate(["/home"]);
+  constructor(private userService: UserService, private router: Router, private fb: FormBuilder) {}
+
+  login() {
+    //e.preventDefault();
+    /* this.userService.login();
+    this.router.navigate(["/home"]); */
   }
 }
